@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca7ix5lsfsn1x"]
+
+[ext_resource type="Script" path="res://script/Tank.gd" id="1_3pyen"]
+[ext_resource type="Texture2D" uid="uid://cojdidon5t2y8" path="res://image/Tank.png" id="2_qnftv"]
+[ext_resource type="PackedScene" uid="uid://damy2i1qv5mqf" path="res://scenes/Boom.tscn" id="3_oqiiv"]
+
+[node name="TankStaticBody2D" type="StaticBody2D"]
+position = Vector2(0, 1.90735e-06)
+collision_layer = 3
+script = ExtResource("1_3pyen")
+
+[node name="Tank" type="Sprite2D" parent="."]
+scale = Vector2(0.0642112, 0.0642112)
+texture = ExtResource("2_qnftv")
+region_enabled = true
+region_rect = Rect2(374.358, 217.459, 331.419, 616.253)
+
+[node name="Boom" parent="." instance=ExtResource("3_oqiiv")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-20, -26.6667)
+scale = Vector2(0.625, 0.833333)
+polygon = PackedVector2Array(16, 8, 16, 56, 48, 56, 48, 31.9146, 48, 8)
